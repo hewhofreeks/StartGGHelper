@@ -1,6 +1,7 @@
 This project was created to help the Under-Night In-Birth 2 Beginner Lobbies (UNI2BL) discord server report on weekly brawl matches via the Start.GG graphql API
 
 To run this project locally you will need:
+- Dotnet (https://dotnet.microsoft.com/en-us/download)
 - VSCode (Recommended) (Or another dotnet IDE)
 - Azure Function Core Tools (https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-csharp#install-the-azure-functions-core-tools)
 - Start.GG Authorization Key (https://developer.start.gg/docs/intro/)
