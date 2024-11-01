@@ -57,7 +57,7 @@ query getEventSets($slug: String, $perPage: Int, $pageNum: Int) {
     id
     name
     sets(page: $pageNum, perPage:$perPage, sortType: RECENT, filters:{
-      
+      state: 3
     }) {
         nodes {
           winnerId

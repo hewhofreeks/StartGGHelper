@@ -21,7 +21,7 @@ namespace StartGGHelper
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req, string urlSlug)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
-            if(String.IsNullOrEmpty(urlSlug) || !urlSlug.ToLower().Contains("brawl"))
+            if(String.IsNullOrEmpty(urlSlug))
             {
                 return new NotFoundResult();
             }
