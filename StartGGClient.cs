@@ -44,7 +44,7 @@ public class StartGGClient
           sets = results?.Data?.Event?.sets;
 
           if(sets != null)
-            allSets.AddRange(sets.nodes.Where(n => !n.displayScore.Equals("DQ", StringComparison.InvariantCultureIgnoreCase)));
+            allSets.AddRange(sets.nodes.Where(n => n.displayScore != null && !n.displayScore.Equals("DQ", StringComparison.InvariantCultureIgnoreCase)));
 
         } while(sets != null && sets.pageInfo.totalPages != sets.pageInfo.page);
         
