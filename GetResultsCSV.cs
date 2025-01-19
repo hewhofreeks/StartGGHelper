@@ -36,11 +36,15 @@ namespace StartGGHelper
             csvBuilder.AppendLine("time completed,winner name,winner score,loser name,loser score");
             foreach (var set in allSets)
             {
-                var scoreResults = set.displayScore.Split("-").Select(s => s.Trim()).ToArray();
-                var player1Name = scoreResults[0].Substring(0, scoreResults[0].Length - 1).Trim();
-                var player1Score = int.Parse(scoreResults[0].Last().ToString());
+                var player1Name = set.slots.First().entrant.name;
+                var player2Name = set.slots.Last().entrant.name;
 
-                var player2Name = scoreResults[1].Substring(0, scoreResults[1].Length - 1).Trim();
+                var scoreResults = set.displayScore
+                    .Replace(player1Name, "")
+                    .Replace(player2Name, "")
+                    .Split("-").Select(s => s.Trim()).ToArray();
+                    
+                var player1Score = int.Parse(scoreResults[0].Last().ToString());
                 var player2Score = int.Parse(scoreResults[1].Last().ToString());
 
                 csvBuilder.Append(set.CompletedAtDateTime);

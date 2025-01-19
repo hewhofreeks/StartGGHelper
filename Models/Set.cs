@@ -1,3 +1,5 @@
+using Microsoft.Identity.Client;
+
 namespace Models
 {
     public class PaginatedSets
@@ -15,6 +17,8 @@ namespace Models
         public string displayScore {get;set;}
         public int? completedAt {get;set;}
 
+        public IEnumerable<Slot> slots {get;set;}
+
         public DateTime CompletedAtDateTime { get { return UnixTimeStampToDateTime(completedAt.Value); }}
 
         public static DateTime UnixTimeStampToDateTime( double unixTimeStamp )
@@ -25,4 +29,10 @@ namespace Models
             return dateTime;
         }
     }
+
+    public class Slot
+    {
+        public Entrant entrant {get;set;}
+    }
+
 }
